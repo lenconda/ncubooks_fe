@@ -1,4 +1,4 @@
-# ncubooks_fe
+# NCUBooks FE
 
 > NCUBOOKS for NCU students.
 
