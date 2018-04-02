@@ -1,6 +1,6 @@
 # NCUBooks FE
 
-> 南大图书-前端代码
+> 南大图书-前端部分
 
 ## Build Setup
 
