@@ -1,6 +1,6 @@
 # ncubooks_fe
 
-> NCUBOOKS for NCU students.
+> 南昌大学家园工作室-南大图书项目-前端代码
 
 ## Build Setup
 
