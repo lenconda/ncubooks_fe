@@ -8,8 +8,12 @@ import store from './store'
 import './assets/normalize.less'
 //引入Flexible
 import 'lib-flexible'
+import vueResource from 'vue-resource'
 
 Vue.config.productionTip = false
+Vue.use(vueResource)
+// 设置全局header
+Vue.http.headers.common['authorization'] = `${localStorage.token}`
 
 /* eslint-disable no-new */
 new Vue({
