@@ -18,7 +18,8 @@ export default {
       Toast({
         message: 'fuck',
         iconClass: 'nbs-spin nbsicon nbs-loading',
-        duration: -1
+        duration: -1,
+        className: 'nbs-toast'
       })
     }
   }

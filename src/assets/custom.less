@@ -1,3 +1,5 @@
+// 定义前缀
+@prefix: nbs;
 // 定义Loading动画
 @keyframes nbs-spin {
   0% {
@@ -10,7 +12,7 @@
   }
 }
 
-.nbs-spin {
+.@{prefix}-spin {
   animation: nbs-spin 1s infinite  linear;
   &.slow-spin {
     animation-duration: 3s;
@@ -18,4 +20,8 @@
   &.fast-spin {
     animation-duration: .5s;
   }
+}
+
+.@{prefix}-toast {
+  padding: 10px !important;
 }
