@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <mt-button type="primary" size="large" @click="showToast">asdasd</mt-button>
-    <h2><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></h2>
   </div>
 </template>
 
@@ -18,7 +17,7 @@ export default {
     showToast () {
       Toast({
         message: 'fuck',
-        iconClass: 'fa fa-spin nbsicon nbs-loading',
+        iconClass: 'nbs-spin nbsicon nbs-loading',
         duration: -1
       })
     }

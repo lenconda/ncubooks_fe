@@ -14,6 +14,8 @@ import 'lib-flexible'
 import vueResource from 'vue-resource'
 import 'mint-ui/lib/style.min.css'
 import { Button } from 'mint-ui'
+// 自定义CSS，这个一定要在最后引入
+import './assets/custom.less'
 
 Vue.component(Button.name, Button)
 Vue.config.productionTip = false
