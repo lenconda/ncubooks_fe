@@ -6,11 +6,16 @@ import router from './router'
 import store from './store'
 // 初始化CSS，一定要在最上面引入
 import './assets/normalize.less'
+// 引入图标主题
 import 'font-awesome/css/font-awesome.min.css'
-//引入Flexible
+import './assets/ncubooks-icon.css'
+// 引入Flexible
 import 'lib-flexible'
 import vueResource from 'vue-resource'
+import 'mint-ui/lib/style.min.css'
+import { Button } from 'mint-ui'
 
+Vue.component(Button.name, Button)
 Vue.config.productionTip = false
 Vue.use(vueResource)
 // 设置全局header
