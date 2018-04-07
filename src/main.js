@@ -6,6 +6,7 @@ import router from './router'
 import store from './store'
 // 初始化CSS，一定要在最上面引入
 import './assets/normalize.less'
+import 'font-awesome/css/font-awesome.min.css'
 //引入Flexible
 import 'lib-flexible'
 import vueResource from 'vue-resource'
