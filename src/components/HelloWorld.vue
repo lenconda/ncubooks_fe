@@ -1,11 +1,13 @@
 <template>
   <div class="hello">
-    <mt-button type="primary" size="large" @click="showToast">asdasd</mt-button>
+    <mt-button type="primary" size="large" @click="$toast('fuck')">asdasd</mt-button>
+    <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
+    <mt-button type="default" size="large" @click="$indicator.close()"></mt-button>
   </div>
 </template>
 
 <script>
-import { Toast } from 'mint-ui'
+import utils from '../utils'
 export default {
   name: 'HelloWorld',
   data () {
@@ -15,12 +17,10 @@ export default {
   },
   methods: {
     showToast () {
-      Toast({
-        message: 'fuck',
-        iconClass: 'nbs-spin nbsicon nbs-loading',
-        duration: -1,
-        className: 'nbs-toast'
-      })
+      let obj = {
+        message: 'permission denied'
+      }
+      utils.showToast(this, obj)
     }
   }
 }

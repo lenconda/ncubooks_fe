@@ -13,9 +13,17 @@ import './assets/ncubooks-icon.css'
 import 'lib-flexible'
 import vueResource from 'vue-resource'
 import 'mint-ui/lib/style.min.css'
+// 引入非服务类组件
 import { Button } from 'mint-ui'
 // 自定义CSS，这个一定要在最后引入
 import './assets/custom.less'
+
+// 全局引入服务类组件
+import { Toast, Indicator, MessageBox } from 'mint-ui'
+// 全局注册服务类组件
+Vue.prototype.$toast = Toast
+Vue.prototype.$indicator = Indicator
+Vue.prototype.$messagebox = MessageBox
 
 Vue.component(Button.name, Button)
 Vue.config.productionTip = false
