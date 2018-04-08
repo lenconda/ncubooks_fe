@@ -36,6 +36,7 @@ const showToast = (_this, obj, position) => {
   if (message !== '获取成功') {
     Toast({
       message: message,
+      className: 'nbs-toast',
       iconClass: iconClass,
       position: position,
       duration: 3000
