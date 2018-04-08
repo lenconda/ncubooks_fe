@@ -26,6 +26,8 @@ const showToast = (_this, obj, position) => {
   try {
     if (message.indexOf('成功') >= 0) {
       iconClass = 'nbsicon nbs-success-o'
+    } else {
+      iconClass = 'nbsicon nbs-error-o'
     }
   } catch (e) {
     iconClass = 'nbsicon nbs-error-o'

@@ -24,7 +24,7 @@ import { Toast, Indicator, MessageBox } from 'mint-ui'
 Vue.prototype.$toast = Toast
 Vue.prototype.$indicator = Indicator
 Vue.prototype.$messagebox = MessageBox
-
+// 注册非服务类组件
 Vue.component(Button.name, Button)
 Vue.config.productionTip = false
 Vue.use(vueResource)

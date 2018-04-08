@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <mt-button type="primary" size="large" @click="$toast('fuck')">asdasd</mt-button>
+    <mt-button type="primary" size="large" @click="showToast">asdasd</mt-button>
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
     <mt-button type="default" size="large" @click="$indicator.close()"></mt-button>
   </div>
@@ -18,7 +18,7 @@ export default {
   methods: {
     showToast () {
       let obj = {
-        message: 'permission denied'
+        message: '连接超时，图书馆崩了'
       }
       utils.showToast(this, obj)
     }
