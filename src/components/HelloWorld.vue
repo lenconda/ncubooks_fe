@@ -1,8 +1,7 @@
 <template>
   <div class="hello">
-    <mt-button type="primary" size="large" @click="showToast">asdasd</mt-button>
+    <mt-button type="primary" size="large" @click="showToast">fuck</mt-button>
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
-    <mt-button type="default" size="large" @click="$indicator.close()"></mt-button>
   </div>
 </template>
 
