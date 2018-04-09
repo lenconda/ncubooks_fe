@@ -1,0 +1,8 @@
+html {
+  font-size: 10vw;
+}
+@media (min-width: 540px) {
+  html {
+    font-size: 54px;
+  }
+}
