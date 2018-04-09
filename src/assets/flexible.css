@@ -1,8 +1,8 @@
 html {
-  font-size: 10vw;
+  font-size: 10vw !important;
 }
 @media (min-width: 540px) {
   html {
-    font-size: 54px;
+    font-size: 54px !important; /*no*/
   }
 }

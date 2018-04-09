@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <h2>asdasdasd</h2>
     <mt-button type="primary" size="large" @click="showToast">fuck</mt-button>
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
   </div>
@@ -29,6 +30,9 @@ export default {
 <style lang="less" scoped>
 h1, h2 {
   font-weight: normal;
+}
+h2 {
+  font-size: 22px;
 }
 ul {
   list-style-type: none;
