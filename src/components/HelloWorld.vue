@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h2>asdasdasd</h2>
-    <mt-button type="primary" size="large" @click="showToast">fuck</mt-button>
+    <h2>Lorem ipsum</h2>
+    <mt-button type="primary" size="large" @click="showToast">mmp</mt-button>
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
     <button class="fuck">asdasd</button>
   </div>
