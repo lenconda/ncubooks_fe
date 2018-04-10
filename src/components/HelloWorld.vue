@@ -3,6 +3,7 @@
     <h2>asdasdasd</h2>
     <mt-button type="primary" size="large" @click="showToast">fuck</mt-button>
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
+    <button class="fuck">asdasd</button>
   </div>
 </template>
 
@@ -44,5 +45,10 @@ ul {
 }
 a {
   color: #42b983;
+}
+.hello {
+  .fuck {
+    padding: 8px;
+  }
 }
 </style>

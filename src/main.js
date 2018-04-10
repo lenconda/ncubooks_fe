@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 // 初始化CSS，一定要在最上面引入
-import './assets/normalize.less'
+import './assets/normalize.css'
 // 引入Flexible.css
 import './assets/flexible.css'
 // 引入图标主题
