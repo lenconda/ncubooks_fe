@@ -6,6 +6,8 @@ import router from './router'
 import store from './store'
 // 初始化CSS，一定要在最上面引入
 import './assets/normalize.less'
+// 引入Flexible.css
+import './assets/flexible.css'
 // 引入图标主题
 import 'font-awesome/css/font-awesome.min.css'
 import './assets/ncubooks-icon.css'
@@ -15,8 +17,6 @@ import 'mint-ui/lib/style.min.css'
 import { Button } from 'mint-ui'
 // 自定义CSS，这个一定要在最后引入
 import './assets/custom.less'
-// 引入Flexible.css
-import './assets/flexible.css'
 
 // 全局引入服务类组件
 import { Toast, Indicator, MessageBox } from 'mint-ui'
