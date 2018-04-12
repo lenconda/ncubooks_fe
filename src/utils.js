@@ -28,6 +28,7 @@ const showToast = (message, position) => {
       iconClass = 'nbsicon nbs-success-o'
     } else {
       iconClass = 'nbsicon nbs-error-o'
+      message = '操作失败'
     }
   } catch (e) {
     iconClass = 'nbsicon nbs-error-o'
