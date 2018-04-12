@@ -18,11 +18,8 @@ export default {
     }
   },
   methods: {
-    showToast () {
-      let obj = {
-        message: '连接超时，图书馆崩了'
-      }
-      utils.showToast(this, obj)
+    async showToast () {
+      console.log(await utils.ajax({method: 'get', url: 'https://os.ncuos.com/api/go/events/all?mine=false&page=1'}))
     },
     testOnly () {
       this.$http({
@@ -32,6 +29,8 @@ export default {
           username: 1053464288,
           password: 'foo bar'
         }
+      }).catch(error => {
+        console.log(error.response)
       })
     }
   }

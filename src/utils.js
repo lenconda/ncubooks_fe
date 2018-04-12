@@ -3,23 +3,22 @@
 
 // 在这里引入需要的依赖
 import { Toast } from 'mint-ui'
-
+import axios from 'axios'
+import router from './router'
 
 /**
  *
  * @param _this
  * @param obj
  * @param position
- * @param jump
  */
-const showToast = (_this, obj, position) => {
+const showToast = (message, position) => {
   position = position || 'middle'
-  let message = typeof obj.message !== 'undefined' ? obj.message : '操作失败',
-    iconClass = typeof obj.message !== 'undefined' ? '' : 'nbsicon nbs-error-o'
+  let iconClass = typeof message !== 'undefined' ? '' : 'nbsicon nbs-error-o'
   try {
     if (message.indexOf('permission') >= 0 || message.indexOf('登录') >= 0) {
       iconClass = 'nbsicon nbs-warn-o'
-      _this.$router.push('/login')
+      router.push('/login')
     }
   } catch (e) {
     console.error(e)
@@ -47,6 +46,27 @@ const showToast = (_this, obj, position) => {
   }
 }
 
+/**
+ *
+ * @param params
+ * @returns {Promise<any>}
+ */
+const ajax = async function (params) {
+  let result = new Promise((resolve, reject) => {
+    axios(params)
+      .then(res => {
+        showToast(res.data.message)
+        resolve(res)
+      })
+      .catch(error => {
+      showToast(error.response.statusText)
+      reject(error)
+    })
+  })
+  return result
+}
+
 export default {
-  showToast
+  showToast,
+  ajax
 }
