@@ -11,7 +11,7 @@ import './assets/flexible.css'
 // 引入图标主题
 import 'font-awesome/css/font-awesome.min.css'
 import './assets/ncubooks-icon.css'
-import vueResource from 'vue-resource'
+import axios from 'axios'
 import 'mint-ui/lib/style.min.css'
 // 引入非服务类组件
 import { Button } from 'mint-ui'
@@ -27,10 +27,9 @@ Vue.prototype.$messagebox = MessageBox
 // 注册非服务类组件
 Vue.component(Button.name, Button)
 Vue.config.productionTip = false
-Vue.use(vueResource)
+Vue.prototype.$http = axios
 // 设置全局header
-Vue.http.headers.common['authorization'] = `${localStorage.token}`
-
+axios.defaults.headers.common['Authorization'] = `${localStorage.token}`
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

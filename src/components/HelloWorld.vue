@@ -2,8 +2,9 @@
   <div class="hello">
     <h2>Lorem ipsum</h2>
     <mt-button type="primary" size="large" @click="showToast">mmp</mt-button>
+    <mt-button type="primary" size="large" @click="$http.get('/api/fuck')">mmp</mt-button>
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
-    <button class="fuck">asdasd</button>
+    <button class="fuck" @click="testOnly">asdasd</button>
   </div>
 </template>
 
@@ -22,6 +23,16 @@ export default {
         message: '连接超时，图书馆崩了'
       }
       utils.showToast(this, obj)
+    },
+    testOnly () {
+      this.$http({
+        method: 'post',
+        url: '/api/test',
+        data: {
+          username: 1053464288,
+          password: 'foo bar'
+        }
+      })
     }
   }
 }
