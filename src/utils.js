@@ -8,8 +8,7 @@ import router from './router'
 
 /**
  *
- * @param _this
- * @param obj
+ * @param message
  * @param position
  */
 const showToast = (message, position) => {

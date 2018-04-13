@@ -5,6 +5,7 @@
     <mt-button type="primary" size="large" @click="$http.get('/api/fuck')">mmp</mt-button>
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
     <button class="fuck" @click="testOnly">asdasd</button>
+    <button id="test">fuck</button>
   </div>
 </template>
 
@@ -35,6 +36,11 @@ export default {
     }
   }
 }
+$(function () {
+  $('#test').click(() => {
+    alert(1)
+  })
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
