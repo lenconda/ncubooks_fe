@@ -17,7 +17,7 @@ $(function () {
     }
   })
   $('#controller').click(function () {
-    $(document).scrollTop(0)
+    $('html,body').animate({scrollTop: 0}, 512)
   })
 })
 </script>
