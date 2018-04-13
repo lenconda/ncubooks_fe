@@ -10,7 +10,7 @@ export default {
 }
 $(function () {
   $(document).scroll(function () {
-    if ($(document).scrollTop() >= 256) {
+    if ($(document).scrollTop() >= 128) {
       $('#controller').css('display', 'block')
     } else {
       $('#controller').css('display', 'none')
