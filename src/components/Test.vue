@@ -1,12 +1,18 @@
 <template>
   <div class="hello">
     <h2>Lorem ipsum</h2>
+    <hr>
     <mt-button type="primary" size="large" @click="showToast">mmp</mt-button>
+    <hr>
     <mt-button type="primary" size="large" @click="$http.get('/api/fuck')">mmp</mt-button>
+    <hr>
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
+    <hr>
     <button class="fuck" @click="testOnly">asdasd</button>
     <button id="test">fuck</button>
+    <hr>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt doloremque enim impedit inventore laborum, obcaecati omnis qui quod sunt unde veritatis! Dolorem eos molestiae nostrum perferendis quam rem rerum?</p>
+    <input type="text">
     <scroll></scroll>
   </div>
 </template>
