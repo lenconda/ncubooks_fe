@@ -86,8 +86,7 @@ video,
 input {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-weight: normal;
+  border: none;
   vertical-align: baseline;
 }
 
@@ -145,7 +144,7 @@ h4 {font-size: 18px;}
 h5 {font-size: 14px;}
 h6 {font-size: 12px;}
 
-button {
+button, input {
   font-size: 14px;
 }
 

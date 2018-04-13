@@ -1,27 +1,35 @@
 <template>
   <div class="hello">
+    <h1>Lorem ipsum</h1>
     <h2>Lorem ipsum</h2>
+    <h3>Lorem ipsum</h3>
+    <h4>Lorem ipsum</h4>
+    <h5>Lorem ipsum</h5>
+    <h6>Lorem ipsum</h6>
+    <p><i>Lorem ipsum</i></p>
+    <p><strong>Lorem ipsum</strong></p>
     <hr>
-    <mt-button type="primary" size="large" @click="showToast">mmp</mt-button>
+    <mt-button type="primary" size="large" @click="showToast">Common Ajax Testing</mt-button>
+    <br>
+    <mt-button type="primary" size="large" @click="$http.get('/api/fuck')">Axios Ajax Testing</mt-button>
+    <br>
+    <mt-button type="danger" size="large" @click="$indicator.open()">Indicator Testing</mt-button>
     <hr>
-    <mt-button type="primary" size="large" @click="$http.get('/api/fuck')">mmp</mt-button>
-    <hr>
-    <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
-    <hr>
-    <button class="fuck" @click="testOnly">asdasd</button>
-    <button id="test">fuck</button>
+    <button class="fuck" @click="testOnly">Padding Testing</button>
+    <button id="test">jQuery Testing</button>
     <hr>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt doloremque enim impedit inventore laborum, obcaecati omnis qui quod sunt unde veritatis! Dolorem eos molestiae nostrum perferendis quam rem rerum?</p>
-    <input type="text">
+    <hr>
+    <input type="text" placeholder="Input text testing">
     <scroll></scroll>
   </div>
 </template>
 
 <script>
 import utils from '../utils'
-import ScrollTop from './scrolltop/scrolltop'
+import ScrollTop from '@/components/scrolltop/scrolltop'
 export default {
-  name: 'HelloWorld',
+  name: 'Test',
   components: {
     'scroll': ScrollTop
   },
