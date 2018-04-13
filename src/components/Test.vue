@@ -6,13 +6,19 @@
     <mt-button type="danger" size="large" @click="$indicator.open()">mmp</mt-button>
     <button class="fuck" @click="testOnly">asdasd</button>
     <button id="test">fuck</button>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt doloremque enim impedit inventore laborum, obcaecati omnis qui quod sunt unde veritatis! Dolorem eos molestiae nostrum perferendis quam rem rerum?</p>
+    <scroll></scroll>
   </div>
 </template>
 
 <script>
 import utils from '../utils'
+import ScrollTop from './scrolltop/scrolltop'
 export default {
   name: 'HelloWorld',
+  components: {
+    'scroll': ScrollTop
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
