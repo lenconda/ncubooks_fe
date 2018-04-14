@@ -13,7 +13,7 @@ import router from './router'
  */
 const showToast = (message, position) => {
   position = position || 'middle'
-  let iconClass = typeof message !== 'undefined' ? '' : 'nbsicon nbs-error-o'
+  let iconClass = typeof message !== 'undefined' ? '' : 'nbsicon nbs-error-s'
   try {
     if (message.indexOf('permission') >= 0 || message.indexOf('登录') >= 0) {
       iconClass = 'nbsicon nbs-warn-o'
@@ -24,13 +24,13 @@ const showToast = (message, position) => {
   }
   try {
     if (message.indexOf('成功') >= 0) {
-      iconClass = 'nbsicon nbs-success-o'
+      iconClass = 'nbsicon nbs-success-s'
     } else {
-      iconClass = 'nbsicon nbs-error-o'
+      iconClass = 'nbsicon nbs-error-s'
       message = '操作失败'
     }
   } catch (e) {
-    iconClass = 'nbsicon nbs-error-o'
+    iconClass = 'nbsicon nbs-error-s'
     console.log(e)
   }
   if (message !== '获取成功') {
