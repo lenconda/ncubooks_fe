@@ -15,7 +15,7 @@ const showToast = (message, position) => {
   position = position || 'middle'
   let iconClass = typeof message !== 'undefined' ? '' : 'nbsicon nbs-error-s'
   try {
-    if (message.indexOf('permission') >= 0 || message.indexOf('登录') >= 0) {
+    if (message.indexOf('permission') >= 0 || message.indexOf('Unauthorized') >=0 || message.indexOf('重新登录') >= 0) {
       iconClass = 'nbsicon nbs-warn-o'
       router.push('/login')
     }
@@ -27,7 +27,6 @@ const showToast = (message, position) => {
       iconClass = 'nbsicon nbs-success-s'
     } else {
       iconClass = 'nbsicon nbs-error-s'
-      message = '操作失败'
     }
   } catch (e) {
     iconClass = 'nbsicon nbs-error-s'
@@ -53,13 +52,24 @@ const showToast = (message, position) => {
  */
 const ajax = async function (params) {
   let result = new Promise((resolve, reject) => {
-    axios(params)
-      .then(res => {
-        showToast(res.data.message)
-        resolve(res)
-      })
-      .catch(error => {
-      showToast(error.response.statusText)
+    axios(params).then(res => {
+      showToast(res.data.message)
+    }).catch(error => {
+      console.log(error.response)
+      switch (error.response.status) {
+        case 401:
+          showToast('请重新登录');
+          break;
+        case 403:
+          showToast('权限不足');
+          break;
+        case 500:
+          showToast('服务器错误');
+          break;
+        default:
+          showToast(error.response.data);
+          break;
+      }
       reject(error)
     })
   })
