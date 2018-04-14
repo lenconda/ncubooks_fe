@@ -1,25 +1,33 @@
 <template>
-  <div class="controller" id="controller" style="display: none;">
+  <div class="controller" @click="slideToTop" v-show="show">
     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'scrolltop'
-}
-$(function () {
-  $(document).scroll(function () {
-    if ($(document).scrollTop() >= 128) {
-      $('#controller').css('display', 'block')
-    } else {
-      $('#controller').css('display', 'none')
+  name: 'scrolltop',
+  data () {
+    return {
+      show: false
     }
-  })
-  $('#controller').click(function () {
-    $('html,body').animate({scrollTop: 0}, 512)
-  })
-})
+  },
+  mounted () {
+    const _this = this
+    $(document).scroll(function () {
+      if ($(document).scrollTop() >= 128) {
+        _this.show = true
+      } else {
+        _this.show = false
+      }
+    })
+  },
+  methods: {
+    slideToTop () {
+      $('html,body').animate({scrollTop: 0}, 512)
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
