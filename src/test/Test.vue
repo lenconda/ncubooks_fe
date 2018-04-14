@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     async showToast () {
-      console.log(await utils.ajax({method: 'get', url: 'https://os.ncuos.com/api/go/events/all?mine=false&page=1'}))
+      console.log(await utils.ajax({method: 'get', url: '/api/toast'}))
     },
     testOnly () {
       this.$http({
