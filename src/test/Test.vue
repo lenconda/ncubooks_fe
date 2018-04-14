@@ -18,6 +18,8 @@
     <button class="fuck" @click="testOnly">Padding Testing</button>
     <button id="test">jQuery Testing</button>
     <hr>
+    <button @click="showModal = true">Modal Testing</button>
+    <hr>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt doloremque enim impedit inventore laborum, obcaecati omnis qui quod sunt unde veritatis! Dolorem eos molestiae nostrum perferendis quam rem rerum?</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt doloremque enim impedit inventore laborum, obcaecati omnis qui quod sunt unde veritatis! Dolorem eos molestiae nostrum perferendis quam rem rerum?</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt doloremque enim impedit inventore laborum, obcaecati omnis qui quod sunt unde veritatis! Dolorem eos molestiae nostrum perferendis quam rem rerum?</p>
@@ -31,20 +33,29 @@
     <hr>
     <input type="text" placeholder="Input text testing">
     <scroll></scroll>
+    <modal title="示例标题" v-if="showModal" @cancel="showModal = false" @confirm="showModal = false">
+      <template slot="body">
+        <p>示例内容十五字</p>
+        <p>示例内容十五字</p>
+        <p>示例内容十五字</p>
+      </template>
+    </modal>
   </div>
 </template>
 
 <script>
 import utils from '../utils'
 import ScrollTop from '@/components/scrolltop/scrolltop'
+import Modal from '@/components/modal/modal'
 export default {
   name: 'Test',
   components: {
-    'scroll': ScrollTop
+    'scroll': ScrollTop,
+    'modal': Modal
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      showModal: false
     }
   },
   methods: {
