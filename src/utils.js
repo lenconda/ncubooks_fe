@@ -67,7 +67,7 @@ const ajax = async function (params) {
           showToast('服务器错误');
           break;
         default:
-          showToast(error.response.data);
+          showToast(error.response.data.error);
           break;
       }
       reject(error)

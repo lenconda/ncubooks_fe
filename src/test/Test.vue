@@ -11,7 +11,7 @@
     <hr>
     <mt-button type="primary" size="large" @click="showToast">Common Ajax Testing</mt-button>
     <br>
-    <mt-button type="primary" size="large" @click="$http.get('/api/fuck')">Axios Ajax Testing</mt-button>
+    <mt-button type="primary" size="large" @click="testOnly">Axios Ajax Testing</mt-button>
     <br>
     <mt-button type="danger" size="large" @click="$indicator.open()">Indicator Testing</mt-button>
     <hr>
@@ -51,16 +51,14 @@ export default {
     async showToast () {
       console.log(await utils.ajax({method: 'get', url: '/api/toast'}))
     },
-    testOnly () {
-      this.$http({
+    async testOnly () {
+      await utils.ajax({
         method: 'post',
         url: '/api/test',
         data: {
           username: 1053464288,
           password: 'foo bar'
         }
-      }).catch(error => {
-        console.log(error.response)
       })
     }
   }
