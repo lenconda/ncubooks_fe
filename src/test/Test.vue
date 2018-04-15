@@ -45,14 +45,8 @@
 
 <script>
 import utils from '../utils'
-import ScrollTop from '@/components/scrolltop/scrolltop'
-import Modal from '@/components/modal/modal'
 export default {
   name: 'Test',
-  components: {
-    'scroll': ScrollTop,
-    'modal': Modal
-  },
   data () {
     return {
       showModal: false
