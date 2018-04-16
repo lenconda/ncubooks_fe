@@ -20,7 +20,7 @@
     <hr>
     <button @click="showModal = true">Modal Testing</button>
     <hr>
-    <button @click="getUserData">iNCU User Data</button>
+    <button @click="getData">iNCU User Data</button>
     <hr>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt doloremque enim impedit inventore laborum, obcaecati omnis qui quod sunt unde veritatis! Dolorem eos molestiae nostrum perferendis quam rem rerum?</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt doloremque enim impedit inventore laborum, obcaecati omnis qui quod sunt unde veritatis! Dolorem eos molestiae nostrum perferendis quam rem rerum?</p>
@@ -52,7 +52,8 @@ export default {
   data () {
     return {
       showModal: false,
-      test: ''
+      test: '',
+      mock: ''
     }
   },
   methods: {
@@ -69,18 +70,20 @@ export default {
         }
       })
     },
-    async getUserData (token) {
+    // 这里调用utils中的getUserData函数，需要提供token，token从utils中的getAppData中获取
+    async getData (token) {
       const userData = await utils.getUserData(token)
-      this.test = userData.base_info.xh
+      utils.ajax({method: 'post', url: '/api/books', data: {xh: userData.base_info.xh}}).then(res => {
+        console.log(res)
+      })
     }
   },
   mounted () {
-    console.log('ready')
     utils.getAppData().then(result => {
       if (result.isApp) {
-        this.getUserData(result.data.user.token)
+        this.getData(result.data.user.token)
       } else {
-        this.getUserData(`passport ${localStorage.token}`)
+        this.getData(`passport ${localStorage.token}`)
       }
     })
   }
