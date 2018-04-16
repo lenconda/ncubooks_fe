@@ -5,6 +5,7 @@
 import { Toast } from 'mint-ui'
 import axios from 'axios'
 import router from './router'
+import Miracle from 'incu-webview'
 
 /**
  *
@@ -50,7 +51,7 @@ const showToast = (message, position) => {
  * @param params
  * @returns {Promise<any>}
  */
-const ajax = async function (params) {
+const ajax = async (params) => {
   let result = new Promise((resolve, reject) => {
     axios(params).then(res => {
       showToast(res.data.message)
@@ -76,7 +77,51 @@ const ajax = async function (params) {
   return result
 }
 
+// iNCU相关
+/**
+ *
+ * @returns {Promise<any>}
+ */
+const getAppData = () => {
+  return new Promise((resolve, reject) => {
+    if (Miracle.isApp()) {
+      Miracle.onAppReady(() => {
+        resolve({
+          isApp: true,
+          data: Miracle.getData()
+        })
+      })
+    } else {
+      resolve({
+        isApp: false,
+        data: {}
+      })
+    }
+  })
+}
+
+/**
+ *
+ * @param token
+ * @returns {Promise<any>}
+ */
+const getUserData = async (token) => {
+  return new Promise((resolve, reject) => {
+    axios({
+      method: 'get',
+      url: 'https://api.ncuos.com/api/user/profile/basic',
+      token: token
+    }).then(res => {
+      resolve(res.data)
+    }).catch(err => {
+      reject(err)
+    })
+  })
+}
+
 export default {
   showToast,
-  ajax
+  ajax,
+  getUserData,
+  getAppData
 }
