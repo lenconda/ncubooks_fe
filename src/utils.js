@@ -110,7 +110,9 @@ const getUserData = async (token) => {
     axios({
       method: 'get',
       url: 'https://api.ncuos.com/api/user/profile/basic',
-      token: token
+      headers: {
+        'Authorization': token
+      }
     }).then(res => {
       resolve(res.data)
     }).catch(err => {

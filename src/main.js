@@ -33,7 +33,7 @@ Vue.component('scroll', ScrollTop)
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 // 设置全局header
-axios.defaults.headers.common['Authorization'] = `passport ${localStorage.token}`
+// axios.defaults.headers.common['Authorization'] = `passport ${localStorage.token}`
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

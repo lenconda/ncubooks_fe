@@ -83,6 +83,7 @@ export default {
       if (result.isApp) {
         this.getData(result.data.user.token)
       } else {
+        console.log(1)
         this.getData(`passport ${localStorage.token}`)
       }
     })
