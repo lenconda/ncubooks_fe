@@ -56,7 +56,6 @@ const ajax = async (params) => {
     axios(params).then(res => {
       showToast(res.data.message)
     }).catch(error => {
-      console.log(error.response)
       switch (error.response.status) {
         case 401:
           showToast('请重新登录');
@@ -71,7 +70,7 @@ const ajax = async (params) => {
           showToast(error.response.data.error);
           break;
       }
-      reject(error)
+      reject(`请求出现错误：${error.response.status} ${error.response.data.error}`)
     })
   })
   return result
