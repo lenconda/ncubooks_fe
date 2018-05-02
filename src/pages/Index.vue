@@ -6,17 +6,13 @@
     <footer class="tabbar">
       <router-link class="item" :to="{path: '/index/explore'}">
         <div class="wrapper">
-          <div class="icon">
-            <img src="../assets/img/explore_active.png" alt="explore_active" width="100%">
-          </div>
-          <span class="text">发现</span>
+          <span class="icon explore"></span>
+          <span class="text actived">发现</span>
         </div>
       </router-link>
       <router-link class="item" :to="{path: '/index/mine'}">
         <div class="wrapper">
-          <div class="icon">
-            <img src="../assets/img/mine.png" alt="mine" width="100%">
-          </div>
+          <span class="icon mine"></span>
           <span class="text">我的</span>
         </div>
       </router-link>
@@ -30,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .index {
   height: 100%;
   padding-bottom: 50px;
@@ -62,14 +58,25 @@ export default {
       .wrapper {
         width: auto;
         .icon {
+          display: block;
           width: 25px;
           height: 25px;
           margin-bottom: 2.5px;
+          &.explore {
+            background: url('../assets/img/explore_active.png') 100% e('/') 100% no-repeat;
+          }
+          &.mine {
+            background: url('../assets/img/mine.png') 100% e('/') 100% no-repeat;
+          }
         }
         .text {
-          display: inline-block;
+          display: block;
           font-size: 10px;
           color: #b1bdc6;
+          text-align: center;
+          &.actived {
+            color: #fd7e7e;
+          }
         }
       }
     }

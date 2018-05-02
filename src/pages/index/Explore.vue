@@ -14,7 +14,42 @@
     <section class="newbooks">
       <h6 class="title">新书推送</h6>
       <div class="wrapper">
-        <div class="book-item"></div>
+        <div class="book-item">
+          <img src="../../assets/img/lorem.png" alt="lorem" class="preview" height="100%">
+          <div class="info">
+            <span class="title">作者</span>
+            <span class="content">Lorem</span>
+            <span class="title">类型</span>
+            <span class="content">Lorem ipsum</span>
+          </div>
+        </div>
+        <div class="book-item">
+          <img src="../../assets/img/lorem.png" alt="lorem" class="preview" height="100%">
+          <div class="info">
+            <span class="title">作者</span>
+            <span class="content">Lorem</span>
+            <span class="title">类型</span>
+            <span class="content">Lorem ipsum</span>
+          </div>
+        </div>
+        <div class="book-item">
+          <img src="../../assets/img/lorem.png" alt="lorem" class="preview" height="100%">
+          <div class="info">
+            <span class="title">作者</span>
+            <span class="content">Lorem</span>
+            <span class="title">类型</span>
+            <span class="content">Lorem ipsum</span>
+          </div>
+        </div>
+        <div class="book-item">
+          <img src="../../assets/img/lorem.png" alt="lorem" class="preview" height="100%">
+          <div class="info">
+            <span class="title">作者</span>
+            <span class="content">Lorem</span>
+            <span class="title">类型</span>
+            <span class="content">Lorem ipsum</span>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -26,7 +61,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .container {
   height: 100%;
   .search-wrapper {
@@ -93,10 +128,46 @@ export default {
       font-size: 13px;
       font-weight: bold;
       color: #9b9b9b;
-      margin-bottom: 7px;
+      margin-bottom: 13px;
     }
     .wrapper {
       padding-left: 19.5px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .book-item {
+        width: 165px;
+        height: 115px;
+        overflow: hidden;
+        margin-right: 7px;
+        margin-bottom: 24px;
+        display: flex;
+        .preview {
+          flex-grow: 0;
+        }
+        .info {
+          flex-grow: 1;
+          padding-left: 5px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          span {
+            display: inline-block;
+            text-align: left;
+            margin: 0;
+            &.title {
+              font-size: 10px;
+              color: #9b9b9b;
+              margin-bottom: 6px;
+            }
+            &.content {
+              font-size: 11px;
+              color: #000;
+              margin-bottom: 11px;
+            }
+          }
+        }
+      }
     }
   }
 }
