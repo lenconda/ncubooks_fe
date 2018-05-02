@@ -146,9 +146,9 @@ export default {
           flex-grow: 0;
         }
         .info {
-          flex-grow: 1;
-          padding-left: 5px;
+          width: 84.5px;
           display: flex;
+          padding: 0 7.5px 0 5px;
           flex-direction: column;
           justify-content: center;
           span {
@@ -164,6 +164,10 @@ export default {
               font-size: 11px;
               color: #000;
               margin-bottom: 11px;
+              width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
         }
