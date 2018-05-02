@@ -45,10 +45,14 @@ export default {
     position: fixed;
     bottom: 0;
     background-color: #fff;
-    box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, .09);
+    box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, .09); /*no*/
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    // 防止调用系统软键盘时Tabbar被顶起
+    @media (max-height: 400px) {
+      display: none;
+    }
     .item {
       display: flex;
       flex-grow: 1;
@@ -63,6 +67,7 @@ export default {
           margin-bottom: 2.5px;
         }
         .text {
+          display: inline-block;
           font-size: 10px;
           color: #b1bdc6;
         }
