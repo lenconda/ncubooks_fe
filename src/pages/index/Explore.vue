@@ -42,6 +42,8 @@ export default {
     width: 100%;
     height: 28px;
     padding-right: 8px;
+    position: fixed;
+    top: 0;
     background-color: #f9f9f9;
     display: flex;
     justify-content: flex-start;
