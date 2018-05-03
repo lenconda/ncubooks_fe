@@ -30,7 +30,6 @@ export default {
 .index {
   height: 100%;
   padding-bottom: 50px;
-  padding-top: 28px;
   @media (max-height: 400px) {
     padding-bottom: 0;
   }
