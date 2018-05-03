@@ -14,50 +14,24 @@
     <section class="newbooks">
       <h6 class="title">新书推送</h6>
       <div class="wrapper">
-        <div class="book-item">
-          <img src="../../assets/img/lorem.png" alt="lorem" class="preview" height="100%">
-          <div class="info">
-            <span class="title">作者</span>
-            <span class="content">Lorem</span>
-            <span class="title">类型</span>
-            <span class="content">Lorem ipsum</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <img src="../../assets/img/lorem.png" alt="lorem" class="preview" height="100%">
-          <div class="info">
-            <span class="title">作者</span>
-            <span class="content">Lorem</span>
-            <span class="title">类型</span>
-            <span class="content">Lorem ipsum</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <img src="../../assets/img/lorem.png" alt="lorem" class="preview" height="100%">
-          <div class="info">
-            <span class="title">作者</span>
-            <span class="content">Lorem</span>
-            <span class="title">类型</span>
-            <span class="content">Lorem ipsum</span>
-          </div>
-        </div>
-        <div class="book-item">
-          <img src="../../assets/img/lorem.png" alt="lorem" class="preview" height="100%">
-          <div class="info">
-            <span class="title">作者</span>
-            <span class="content">Lorem</span>
-            <span class="title">类型</span>
-            <span class="content">Lorem ipsum</span>
-          </div>
-        </div>
+        <router-link class="wrapper-link" :to="{path: '/'}">
+          <book-item :image="`https://upload.wikimedia.org/wikipedia/zh/1/10/A_Thousand_Splendid_Suns.gif`" :author="`Lorem`" :category="`Lorem ipsum`" :bookname="`灿烂千阳`"></book-item>
+        </router-link>
+        <book-item :image="null" :bookname="`灿烂千阳`" :category="`Lorem ipsum`" :author="`Lorem`"></book-item>
+        <book-item :image="null" :bookname="`灿烂千阳`" :category="`Lorem ipsum`" :author="`Lorem`"></book-item>
+        <book-item :image="null" :bookname="`灿烂千阳`" :category="`Lorem ipsum`" :author="`Lorem`"></book-item>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import BookItem from '../../components/bookitem'
 export default {
-  name: 'explore'
+  name: 'explore',
+  components: {
+    'book-item': BookItem
+  }
 }
 </script>
 
@@ -135,43 +109,6 @@ export default {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      .book-item {
-        width: 165px;
-        height: 115px;
-        overflow: hidden;
-        margin-right: 7px;
-        margin-bottom: 24px;
-        display: flex;
-        .preview {
-          flex-grow: 0;
-        }
-        .info {
-          width: 84.5px;
-          display: flex;
-          padding: 0 7.5px 0 5px;
-          flex-direction: column;
-          justify-content: center;
-          span {
-            display: inline-block;
-            text-align: left;
-            margin: 0;
-            &.title {
-              font-size: 10px;
-              color: #9b9b9b;
-              margin-bottom: 6px;
-            }
-            &.content {
-              font-size: 11px;
-              color: #000;
-              margin-bottom: 11px;
-              width: 100%;
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            }
-          }
-        }
-      }
     }
   }
 }

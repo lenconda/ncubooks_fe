@@ -61,9 +61,9 @@ export default {
           display: block;
           width: 25px;
           height: 25px;
-          margin-bottom: 2.5px;
+          margin-bottom: 5px;
           &.explore {
-            background: url('../assets/img/explore_active.png') 100% e('/') 100% no-repeat;
+            background: url('../assets/img/explore.png') 100% e('/') 100% no-repeat;
           }
           &.mine {
             background: url('../assets/img/mine.png') 100% e('/') 100% no-repeat;
@@ -74,9 +74,22 @@ export default {
           font-size: 10px;
           color: #b1bdc6;
           text-align: center;
-          &.actived {
-            color: #fd7e7e;
+        }
+      }
+      &.router-link-exact-active {
+        .icon {
+          &.explore {
+            background: url('../assets/img/explore_active.png') 100% e('/') 100% no-repeat;
           }
+          &.mine {
+            background: url('../assets/img/mine_active.png') 100% e('/') 100% no-repeat;
+          }
+        }
+        &:first-child .text {
+          color: #fd7e7e;
+        }
+        &:last-child .text {
+          color: #ffd5d7;
         }
       }
     }
