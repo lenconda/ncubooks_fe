@@ -15,8 +15,8 @@ import axios from 'axios'
 import 'mint-ui/lib/style.min.css'
 // 引入非服务类组件
 import { Button } from 'mint-ui'
-import Modal from '@/components/modal/modal'
-import ScrollTop from '@/components/scrolltop/scrolltop'
+import Modal from '@/components/modal'
+import ScrollTop from '@/components/scrolltop'
 // 自定义CSS，这个一定要在最后引入
 import './assets/custom.less'
 
