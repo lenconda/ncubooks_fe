@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Test from '@/test/Test'
+const Test = () => import('@/test/Test')
 
-import Index from '@/pages/Index'
-import Index_Explore from '@/pages/index/Explore'
-import Index_Mine from '@/pages/index/Mine'
+const Index = () => import('@/pages/Index')
+const Index_Explore = () => import('@/pages/index/Explore')
+const Index_Mine = () => import('@/pages/index/Mine')
 
 Vue.use(Router)
 
