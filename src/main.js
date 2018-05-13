@@ -9,7 +9,6 @@ import './assets/reset.css'
 // 引入Flexible.css
 import './assets/flexible.css'
 // 引入图标主题
-import 'font-awesome/css/font-awesome.min.css'
 import './assets/ncubooks-icon.css'
 import axios from 'axios'
 import 'mint-ui/lib/style.min.css'

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import BookItem from '../../components/bookitem'
+const BookItem = () => import('../../components/bookitem')
 export default {
   name: 'explore',
   components: {
