@@ -5,6 +5,7 @@ const Test = () => import('@/test/Test')
 const Index = () => import('@/pages/Index')
 const Index_Explore = () => import('@/pages/index/Explore')
 const Index_Mine = () => import('@/pages/index/Mine')
+const mytest = () => import('@/components/general_information/index')
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/test',
       name: 'Test',
       component: Test
+    },
+    {
+      path: '/mytest',
+      name: 'mytest',
+      component: mytest
     }
   ]
 })
