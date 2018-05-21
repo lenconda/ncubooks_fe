@@ -29,8 +29,9 @@
     height: 25px;
     text-align: center;
     display: inline-block;
-    line-height: 20px ;
-    border-right: 1px solid ;
+    line-height: 20px;
+    background-color: #fff;
+    border-right: 1px solid;
     .subscript {
       font-size: 14px;
       color: rgba(0, 0, 0, .8);

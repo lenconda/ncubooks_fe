@@ -1,9 +1,5 @@
 <template>
   <div class="container">
-    <section class = 'navbar'>
-      <img src="../../assets/img/return.png" class="return_icon">
-      <h1 class="top_title">图书馆</h1>
-    </section>
     <section class="general_information_area">
       <div class="head_portrait_container">
         <img class="head_portrait_area" src="../../assets/img/test_headphoto.jpg">
@@ -17,7 +13,6 @@
         <general_information sub="倒计时" number="46天" color="white"></general_information>
       </section>
     </section>
-    <section class="shadow_area1 shadow_area"></section>
     <section class="full_details">
       <details_list book_name="书名" book_deadline="最晚还书期限" renewal_number="续借量" operate="操作"  class="head_font"></details_list>
       <details_list book_name="包" book_deadline="2018-3-23" renewal_number="5" operate="续借" color="linear-gradient(to left, #50b2ff ,#4bc2ff)" class="follow_list"></details_list>
@@ -25,7 +20,6 @@
       <details_list book_name="包" book_deadline="2018-3-23" renewal_number="5" operate="续借" color="linear-gradient(to left, #50b2ff ,#4bc2ff)" class="follow_list"></details_list>
       <details_list book_name="包" book_deadline="2018-3-23" renewal_number="5" operate="续借" color="linear-gradient(to left, #50b2ff ,#4bc2ff)" class="follow_list"></details_list>
     </section>
-    <section class="shadow_area2 shadow_area"></section>
   </div>
 </template>
 <script>
@@ -42,35 +36,19 @@
 <style lang="less" scoped>
   .container {
     height: 100%;
-    .navbar {
-      height: 44px;
-      width: 100%;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, .09);
-      .return_icon {
-        width: 12px;
-        height: 13px;
-        position: fixed;
-        left: 8.5px;
-        top: 14.5px;
-      }
-      .top_title {
-        font-size: 16px;
-        color: rgb(51, 51, 51);
-        text-align: center;
-        line-height: 37px;
-      }
-    }
+    background-color: #f6f6f6;
     .general_information_area {
       width: 100%;
       height: 115px;
       box-shadow: 0 1px 1px rgba(0, 0, 0, .09);
+      background-color: #fff;
+      padding-top: 9px;
       .head_portrait_container {
         width: 45px;
         height: 45px;
         border-radius: 50%;
         overflow: hidden;
         margin-left: 9px;
-        margin-top: 9px;
         .head_portrait_area {
           width: 45px;
           height: 45px;
@@ -92,14 +70,9 @@
         margin-top: 4px;
       }
     }
-    .shadow_area {
-      width: 100%;
-      background-color: #f6f6f6;
-    }
-    .shadow_area1 {
-      height: 26.5px;
-    }
     .full_details {
+      margin-top: 26.5px;
+      background-color: #fff;
       width: 100%;
       height: 187.5px;
       box-shadow: 0 1px 1px rgba(0, 0, 0, .09);
@@ -110,9 +83,6 @@
       .follow_list {
         margin-top: 12px;
       }
-    }
-    .shadow_area2 {
-      height: 227.5px;
     }
   }
 </style>
