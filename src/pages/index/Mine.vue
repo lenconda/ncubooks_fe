@@ -29,8 +29,8 @@
   </div>
 </template>
 <script>
-  const OperateList = import('../../components/details_list/index')
-  const general_information = import('../../components/general_information/index')
+  import OperateList from '../../components/details_list/index'
+  import general_information from '../../components/general_information/index'
   export default {
     name: 'mine',
     components: {
