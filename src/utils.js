@@ -15,23 +15,12 @@ import Miracle from 'incu-webview'
 const showToast = (message, position) => {
   position = position || 'middle'
   let iconClass = typeof message !== 'undefined' ? '' : 'nbsicon nbs-error-s'
-  try {
-    if (message.indexOf('permission') >= 0 || message.indexOf('Unauthorized') >=0 || message.indexOf('重新登录') >= 0) {
-      iconClass = 'nbsicon nbs-warn-o'
-      router.push('/login')
-    }
-  } catch (e) {
-    console.error(e)
-  }
-  try {
-    if (message.indexOf('成功') >= 0) {
-      iconClass = 'nbsicon nbs-success-s'
-    } else {
-      iconClass = 'nbsicon nbs-error-s'
-    }
-  } catch (e) {
+  if (message.indexOf('permission') >= 0 || message.match(/[Uu]nauthorized/g) || message.indexOf('重新登录') >= 0) {
+    iconClass = 'nbsicon nbs-warn-o'
+  } else if (message.indexOf('成功') >= 0) {
+    iconClass = 'nbsicon nbs-success-s'
+  } else {
     iconClass = 'nbsicon nbs-error-s'
-    console.log(e)
   }
   if (message !== '获取成功') {
     Toast({
@@ -52,25 +41,12 @@ const showToast = (message, position) => {
  * @returns {Promise<any>}
  */
 const ajax = async (params) => {
+  params.baseURL = 'https://api.ncuos.com'
   let result = new Promise((resolve, reject) => {
     axios(params).then(res => {
       showToast(res.data.message)
     }).catch(error => {
-      switch (error.response.status) {
-        case 401:
-          showToast('请重新登录');
-          break;
-        case 403:
-          showToast('权限不足');
-          break;
-        case 500:
-          showToast('服务器错误');
-          break;
-        default:
-          showToast(error.response.data.error);
-          break;
-      }
-      reject(`请求出现错误：${error.response.status} ${error.response.data.error}`)
+      showToast(error.message)
     })
   })
   return result
