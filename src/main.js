@@ -6,8 +6,8 @@ import router from './router'
 import store from './store'
 // 初始化CSS，一定要在最上面引入
 import './assets/reset.css'
-// 引入Flexible.css
-import './assets/flexible.css'
+// 引入lib-flexible
+import 'lib-flexible'
 // 引入图标主题
 import './assets/ncubooks-icon.css'
 import axios from 'axios'
