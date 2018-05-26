@@ -81,7 +81,7 @@ export default {
   mounted () {
     utils.getAppData().then(result => {
       if (result.isApp) {
-        this.getData(result.data.user.token)
+        this.getData(`passport ${result.data.user.token}`)
       } else {
         console.log(1)
         this.getData(`passport ${localStorage.token}`)
