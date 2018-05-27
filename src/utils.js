@@ -4,7 +4,6 @@
 // 在这里引入需要的依赖
 import { Toast } from 'mint-ui'
 import axios from 'axios'
-import router from './router'
 import Miracle from 'incu-webview'
 
 /**
@@ -13,20 +12,34 @@ import Miracle from 'incu-webview'
  * @param position
  */
 const showToast = (message, position = 'middle') => {
-  // position = position || 'middle'
-  let iconClass = typeof message !== 'undefined' ? '' : 'nbsicon nbs-error-s'
-  if (message.indexOf('permission') >= 0 || message.match(/[Uu]nauthorized/g) || message.indexOf('重新登录') >= 0) {
-    iconClass = 'nbsicon nbs-warn-o'
-  } else if (message.indexOf('成功') >= 0) {
-    iconClass = 'nbsicon nbs-success-s'
+  let iconClass = ['nbsicon']
+  // 根据message类型处理iconCLass
+  let msg= ''
+  typeof message !== 'undefined' ? '' : iconClass.push('nbs-error-s')
+  if (typeof message === 'undefined') {
+    iconClass.push('nbs-error-s')
+  } else if (typeof message === 'object') {
+    msg = message.message
+    if (message.status === 1) {
+      iconClass.push('nbs-success-s')
+    } else {
+      iconClass.push('nbs-error-s')
+    }
+  } else if (typeof message === 'string') {
+    msg = message
+    if (message.match(/[Ss]ucce/g) || message.match(/[Ss]ucce/g) || message.match(/成功/g)) {
+      iconClass.push('nbs-success-s')
+    } else {
+      iconClass.push('nbs-error-s')
+    }
   } else {
-    iconClass = 'nbsicon nbs-error-s'
+    iconClass.push('nbs-error-s')
   }
-  if (message !== '获取成功') {
+  if (msg !== '获取成功') {
     Toast({
-      message: message,
+      message: msg,
       className: 'nbs-toast',
-      iconClass: iconClass,
+      iconClass: iconClass.join(' '),
       position: position,
       duration: 3000
     })

@@ -58,9 +58,12 @@ export default {
   },
   methods: {
     async showToast () {
-      const data = await utils.ajax({method: 'get', url: '/api/toast'})
-      console.warn(data)
-      utils.showToast(data)
+      const data = await utils.ajax({
+        method: 'get',
+        url: 'https://easy-mock.com/mock/5ad18c7c70181a3cc827d79b/ncubooks/api/toast'
+      })
+      console.warn(data.data)
+      utils.showToast(data.data)
     },
     async testOnly () {
       utils.ajax({method: 'get', url: '/api/foo'}).then(res => {
