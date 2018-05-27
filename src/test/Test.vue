@@ -58,16 +58,15 @@ export default {
   },
   methods: {
     async showToast () {
-      console.log(await utils.ajax({method: 'get', url: '/api/toast'}))
+      const data = await utils.ajax({method: 'get', url: '/api/toast'})
+      console.warn(data)
+      utils.showToast(data)
     },
     async testOnly () {
-      await utils.ajax({
-        method: 'post',
-        url: '/api/test',
-        data: {
-          username: 1053464288,
-          password: 'foo bar'
-        }
+      utils.ajax({method: 'get', url: '/api/foo'}).then(res => {
+        console.log(res)
+        console.log('ahahaha')
+        utils.showToast(res)
       })
     },
     // 这里调用utils中的getUserData函数，需要提供token，token从utils中的getAppData中获取

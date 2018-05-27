@@ -12,8 +12,8 @@ import Miracle from 'incu-webview'
  * @param message
  * @param position
  */
-const showToast = (message, position) => {
-  position = position || 'middle'
+const showToast = (message, position = 'middle') => {
+  // position = position || 'middle'
   let iconClass = typeof message !== 'undefined' ? '' : 'nbsicon nbs-error-s'
   if (message.indexOf('permission') >= 0 || message.match(/[Uu]nauthorized/g) || message.indexOf('重新登录') >= 0) {
     iconClass = 'nbsicon nbs-warn-o'
@@ -42,14 +42,13 @@ const showToast = (message, position) => {
  */
 const ajax = async (params) => {
   params.baseURL = 'https://api.ncuos.com'
-  let result = new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     axios(params).then(res => {
-      showToast(res.data.message)
+      resolve(res)
     }).catch(error => {
-      showToast(error.message)
+      resolve(`${error.response.status}: ${error.message}`)
     })
   })
-  return result
 }
 
 // iNCU相关
